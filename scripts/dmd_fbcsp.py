@@ -135,8 +135,8 @@ class DMD_FBCSP:
         
         if self.classifier == 'LDA':
             param_grid = {'LDA__solver': ['lsqr','eigen'], 
-                              'LDA__shrinkage': ['auto'], 
-                              'LDA__n_components' : np.unique(self.dmd.y)[:-1]}
+                              'LDA__shrinkage': ['auto']} 
+                            #   'LDA__n_components' : np.unique(self.dmd.y)[:-1]}
             steps = [('standardscaler', StandardScaler()),
                   ('LDA',  LinearDiscriminantAnalysis())]
         

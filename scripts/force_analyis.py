@@ -16,7 +16,6 @@ Universität Paderborn
 gaidai@sportmed.upb.de
 """
 
-#%% import 
 import glob
 import pickle
 import numpy as np
@@ -28,13 +27,13 @@ import matplotlib.pyplot as plt
 from pathlib import Path 
 import tsfel
 
-#%% define input and output folders and get files
+#define input and output folders and get files
 current_dir = Path.cwd()
-results_path = glob.glob(str(current_dir.parent / 'results_used')) # where to put te reults 
+results_path = glob.glob(str(current_dir.parent / 'results')) # where to put te reults 
 force_path = glob.glob(str(current_dir.parent.parent / 'data' / 'BHS' / 'Verhalten_Motorik_Pre_Post' / 'Pre')) #location of force files 
 files = glob.glob(force_path[0] + '/e*') + glob.glob(force_path[0] + '/na*') + glob.glob(force_path[0] + '/nm*')
 
-#%% set fixed variables
+#set fixed variables
 n_trials = 160
 fs = 120  # sampling rate
 length = 120 * 3 # 3sec trial length
@@ -46,7 +45,7 @@ exclude = []
 df_ml = []
 cfg_file = tsfel.get_features_by_domain()
 
-#%% analyse each participant
+#analyse each participant
 for parti in files:
     diff = []
     label = []
@@ -66,13 +65,13 @@ for parti in files:
 
         t.append(trial)
         if trial <= 40: 
-            label.append(['steady right'])
+            label.append([1])
         elif trial > 40 and trial <= 80:
-            label.append(['sine right'])
+            label.append([2])
         elif trial > 80 and trial <= 120 :
-            label.append(['steady left'])
+            label.append([3])
         else: 
-            label.append(['sine left'])
+            label.append([4])
 
     diff = np.asarray(diff)
     label = np.ravel(label)
@@ -102,7 +101,7 @@ for parti in files:
     df_ml.append(df)
 
 
-# save results
+#save results
 exclude = pd.DataFrame(data = exclude, index = part_all)
 mean_all = pd.concat(mean_all_trial)
 df_ml = pd.concat(df_ml, ignore_index=True)
