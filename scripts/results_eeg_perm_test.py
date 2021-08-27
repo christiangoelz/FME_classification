@@ -11,7 +11,7 @@ info = mne.create_info(
         ch_names=m.ch_names, sfreq=200., ch_types='eeg')
 info.set_montage(m)
 
-dmdmean_file = str(Path.cwd().parent / 'results_used'/ 'meanTask_modes.csv') 
+dmdmean_file = str(Path.cwd().parent / 'results'/ 'meanTask_modes.csv') 
 df = pd.read_csv(dmdmean_file, index_col=0)
 # df.drop(['trial'], axis = 1, inplace = True)
 df['exnov']= np.array([1 if 'e' in lab else 0 for lab in df['part']])
@@ -40,5 +40,5 @@ for task, df_t in df_tasks:
 _, pcorr = fdrcorrection(np.ravel(p_all.values))
 p_corr = pd.DataFrame(data = np.reshape(pcorr, (32,16)), columns=p_all.columns)
 
-p_corr.to_csv(str(Path.cwd().parent / 'results_used'/ 'mean_modes_perm_p.csv'))
-t_all.to_csv(str(Path.cwd().parent / 'results_used'/ 'mean_modes_perm_t.csv'))
+p_corr.to_csv(str(Path.cwd().parent / 'results'/ 'mean_modes_perm_p.csv'))
+t_all.to_csv(str(Path.cwd().parent / 'results'/ 'mean_modes_perm_t.csv'))

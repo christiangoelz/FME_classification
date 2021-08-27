@@ -86,14 +86,14 @@ def classify(data, out_folder, pipe = [], param_grid = [], labels = {'all': 0,'s
 
 if __name__ == "__main__":
     #import eeg and force features
-    dmd_file = str(Path.cwd().parent / 'results_used' / 'mean_modes.csv')
-    force_file = str(Path.cwd().parent / 'results_used' / 'force_features_trials.csv')
+    dmd_file = str(Path.cwd().parent / 'results' / 'mean_modes.csv')
+    force_file = str(Path.cwd().parent / 'results' / 'force_features_trials.csv')
 
     dmd = pd.read_csv(dmd_file, index_col= 0)
-    out_eeg = Path.cwd().parent / 'results_used' / 'group_classification' / 'eeg' / 'dmd'
+    out_eeg = Path.cwd().parent / 'results' / 'group_classification' / 'eeg' / 'dmd'
     classify(dmd,out_eeg) 
 
     force = pd.read_csv(force_file)
     force = force[['trial','label', 'dev', 'var', 'part']]
-    out_force = Path.cwd().parent / 'results_used' / 'group_classification' / 'force' / 'performance'
+    out_force = Path.cwd().parent / 'results' / 'group_classification' / 'force' / 'performance'
     classify(force, out_force)
