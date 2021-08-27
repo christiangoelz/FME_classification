@@ -36,12 +36,11 @@ Note: For recomputation all input paths should be adjusted
 ### Supplement: 
 
 #### S1 Group classification: additional classifiers and feature sets: 
-    - extract_eeg_otherfeatures.py. - feature extraction additional EEG features
-    - supplement_classification_group.py - additional classification pipelines (other classifier and feature sets)
-    - supplement_auto_classification_group.py - classification using automatic machine learning (Auto sklearn: https://automl.github.io/auto-sklearn/)
-    - supplement_ml_groups - results additional classification pipelines (other classifier and feature sets)
+- extract_eeg_otherfeatures.py. - feature extraction additional EEG features
+- supplement_classification_group.py - additional classification pipelines (other classifier and feature sets)
+- supplement_auto_classification_group.py - classification using automatic machine learning (Auto sklearn: https://automl.github.io/auto-sklearn/)
+- supplement_ml_groups - results additional classification pipelines (other classifier and feature sets)
 
 #### S2 Task classification: additional feature set:
-
-    - supplement_task_classification_force_otherfeatures.py - task classification based on additional force control features
-    - supplement_ml_tasks_other_features.ipynb - results additional additional force control features
+- supplement_task_classification_force_otherfeatures.py - task classification based on additional force control features
+- supplement_ml_tasks_other_features.ipynb - results additional additional force control features
