@@ -1,7 +1,7 @@
 
 # Paper: Classification characteristics of fine motor experts based on electroencephalographic and force tracking data 
 
-This repository contains the code to generate results, summary statistics, and raw figures for the manuscript "Classification characteristics of fine motor experts based on electroencephalographic and force tracking data "
+This repository contains the code to generate results, summary statistics, and raw figures for the manuscript "Classification characteristics of fine motor experts based on electroencephalographic and force tracking data"\
 Code dependencies:
 
 - Code was developed in Anaconda in the following environment: fme_classification.yml
