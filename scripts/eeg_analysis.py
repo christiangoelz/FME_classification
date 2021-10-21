@@ -4,14 +4,11 @@
 Analysis of electrophysiological data
 
 Classification of Fine Motor Expertise
-Master Thesis - Intelligenz und Bewegung (M.Sc.)
 
 Christian Gölz
 Sportmedizinisches Institut
 Universität Paderborn
 goelz@sportmed.upb.de
-Source Code of Preprocessing & DMD Objects:
-https://github.com/christiangoelz/Code-christiangoelz-Code-Task-classification-and-brain-network-characteristics-of-fine-motor-moveme
 
 modified by:
 Roman Gaidai
@@ -21,8 +18,8 @@ gaidai@sportmed.upb.de
 """
 
 import glob
-from preprocessing import PREPRO # Gölz - GitHub Repository
-from dmdeeg import DMD # Gölz - GitHub Repository
+from preprocessing import PREPRO
+from DMD import DMD
 import numpy as np
 import pandas as pd
 import pickle
